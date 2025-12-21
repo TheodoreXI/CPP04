@@ -23,6 +23,14 @@
 		"tuple": "cpp",
 		"unordered_map": "cpp",
 		"utility": "cpp",
-		"vector": "cpp"
+		"vector": "cpp",
+		"chrono": "cpp",
+		"deque": "cpp",
+		"format": "cpp",
+		"new": "cpp",
+		"ranges": "cpp",
+		"span": "cpp",
+		"stdexcept": "cpp",
+		"variant": "cpp"
 	}
 }
