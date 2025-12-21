@@ -10,6 +10,8 @@ class Cure : public AMateria
         ~Cure(void);
         Cure(const Cure &obj);
         Cure &operator=(const Cure &obj);
+		AMateria* clone() const;
+		void use(ICharacter& target);
         // clone()
 };
 

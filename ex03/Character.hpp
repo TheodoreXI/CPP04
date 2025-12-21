@@ -5,8 +5,12 @@
 
 class Character : public ICharacter
 {
+	protected:
+		std::string name;
+		AMateria	*ama_arr[4];
     public:
         Character(void);
+		Character(std::string val);
         ~Character(void);
         Character(const Character &obj);
         Character &operator=(const Character &obj);

@@ -1,10 +1,29 @@
 #include "Cure.hpp"
 
 Cure::Cure(void)
-    :type("Cure")
+	:AMateria("ice")
 {
-    std::cout << "Cure Default Construtor called.";
+	std::cout << "Cure Default Constructor called.\n";
 }
-Cure::~Cure(void);
-Cure::Cure(const Cure &obj);
-Cure::Cure &operator=(const Cure &obj);
+Cure::~Cure(void)
+{
+	std::cout << "Cure Destructor called.\n";
+}
+
+Cure::Cure(const Cure &obj)
+{
+	*this = obj;
+}
+Cure &Cure::operator=(const Cure &obj)
+{
+	this->type = obj.type;
+	return (*this);
+}
+AMateria* Cure::clone() const
+{
+	return new Cure();
+}
+void Cure::use(ICharacter& target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *"; //must change name after
+}
