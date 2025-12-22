@@ -6,7 +6,8 @@ void	MateriaSource::learnMateria(AMateria *a)
 	{
 		if (!ama_src[i])
 		{
-			ama_src[i] = a->clone();
+			ama_src[i] = a;
+			return;
 		}
 	}
 }
@@ -15,9 +16,13 @@ AMateria*	MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (ama_src[i]->getType() == type)
+		if (ama_src[i])
 		{
-			return (ama_src[i]->clone());
+			std::cout <<ama_src[i]->getType()<< type<< "hererer\n";
+			if (ama_src[i]->getType() == type)
+			{
+				return (ama_src[i]->clone());
+			}
 		}
 	}
 	return (0);

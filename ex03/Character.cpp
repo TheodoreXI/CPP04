@@ -5,6 +5,7 @@ Character::Character(void)
 	std::cout << "Character default constructor called.\n";
 	for (int i = 0; i < 4; i++)
 	{
+		ama_cpy[i] = NULL;
 		ama_arr[i] = NULL;
 	}
 }
@@ -15,6 +16,7 @@ Character::Character(std::string val)
 	std::cout << "Character Parametrized Constructor called.\n";
 	for (int i = 0; i < 4; i++)
 	{
+		ama_cpy[i] = NULL;
 		ama_arr[i] = NULL;
 	}
 }
@@ -23,6 +25,7 @@ Character::~Character(void)
 {
 	for (int i = 0; i < 4; i++)
 	{
+		delete this->ama_cpy[i];
 		delete this->ama_arr[i];
 	}
 	std::cout << "Character default destructor called.\n";
@@ -51,8 +54,17 @@ void Character::equip(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
+		delete ama_cpy[i];
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (ama_arr[i] == m)
+			return ;
 		if (!ama_arr[i])
+		{
 			ama_arr[i] = m;
+			return ;
+		}
 	}
 }
 
@@ -60,7 +72,8 @@ void Character::unequip(int idx)
 {
 	if (idx < 0 || idx >= 4 || !ama_arr[idx])
 		return ;
-	delete ama_arr[idx];
+	ama_cpy[idx] = ama_arr[idx];
+	// delete ama_arr[idx];
 	ama_arr[idx] = NULL;
 }
 

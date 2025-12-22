@@ -8,6 +8,7 @@ class Character : public ICharacter
 	protected:
 		std::string name;
 		AMateria	*ama_arr[4];
+		AMateria	*ama_cpy[4];
     public:
         Character(void);
 		Character(std::string val);

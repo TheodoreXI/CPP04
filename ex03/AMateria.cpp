@@ -18,6 +18,7 @@ void AMateria::use(ICharacter& target)
 }
 
 AMateria::AMateria(void)
+	:type("Amateria")
 {
 	std::cout << "AMateria Default Constructor called.\n";
 }
