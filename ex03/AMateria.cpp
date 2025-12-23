@@ -14,6 +14,7 @@ std::string const &AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
+	std::cout << "oh not\n";
 	std::cout << "AMateria " << target.getName() <<"default sound\n";
 }
 

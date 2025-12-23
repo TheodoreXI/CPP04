@@ -12,12 +12,11 @@ class AMateria
         std::string type;
     public:
         AMateria(std::string const & type);
-        std::string const & getType() const; //Returns the materia type
+        std::string const & getType() const;
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
 		AMateria(void);
 		virtual ~AMateria(void);
-		//maybe i should put other functions
 };
 
 #endif

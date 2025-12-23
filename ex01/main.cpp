@@ -2,14 +2,8 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-void	f(void)
-{
-	system("leaks Brain");
-}
-
 int main()
 {
-	atexit(f);
 	const Animal *a[100];
 	for (int i = 0; i < 100; i++)
 	{
@@ -27,9 +21,9 @@ int main()
 		a[i]->makeSound();
 		delete a[i];
 	}
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
-	// delete j;//should not create a leak
-	// delete i;
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;
+	delete i;
 	return 0;
 }

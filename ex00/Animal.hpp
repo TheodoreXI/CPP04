@@ -16,4 +16,5 @@ class Animal
 		virtual ~Animal(void);
 };
 
+
 #endif

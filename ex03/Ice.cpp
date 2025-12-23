@@ -16,7 +16,10 @@ Ice::Ice(const Ice &obj)
 }
 Ice &Ice::operator=(const Ice &obj)
 {
-	this->type = obj.type;
+	if (this != &obj)
+	{
+		this->type = obj.type;
+	}
 	return (*this);
 }
 AMateria* Ice::clone() const

@@ -20,8 +20,11 @@ Cat::Cat(const Cat &obj)
 
 Cat &Cat::operator=(const Cat &obj)
 {
-	this->type = obj.type;
-	this->b_cat = new Brain(*obj.b_cat);
+	if (this != &obj)
+	{
+		this->type = obj.type;
+		this->b_cat = new Brain(*obj.b_cat);
+	}
 	return (*this);
 }
 

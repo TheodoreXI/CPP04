@@ -38,9 +38,13 @@ Character::Character(const Character &obj)
 Character &Character::operator=(const Character &obj)
 {
 	this->name = obj.name;
-	for (int i = 0; i < 4; i++)
+	if (this != &obj)
 	{
-		this->ama_arr[i] = obj.ama_arr[i]->clone();
+		for (int i = 0; i < 4; i++)
+		{
+			delete this->ama_arr[i];
+			this->ama_arr[i] = obj.ama_arr[i]->clone();
+		}
 	}
 	return (*this);
 }
@@ -73,7 +77,6 @@ void Character::unequip(int idx)
 	if (idx < 0 || idx >= 4 || !ama_arr[idx])
 		return ;
 	ama_cpy[idx] = ama_arr[idx];
-	// delete ama_arr[idx];
 	ama_arr[idx] = NULL;
 }
 
