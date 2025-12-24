@@ -2,7 +2,7 @@ SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp WrongCat.cpp WrongAnimal.cp
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(OBJS:.o=.d)
 CC = c++
-FLAGS = -Wall -MMD -std=c++98
+FLAGS = -Wall -Wextra -Werror -MMD -std=c++98
 NAME = Brain
 
 all: $(NAME)

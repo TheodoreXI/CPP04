@@ -59,6 +59,7 @@ void Character::equip(AMateria* m)
 	for (int i = 0; i < 4; i++)
 	{
 		delete ama_cpy[i];
+		ama_cpy[i] = NULL;
 	}
 	for (int i = 0; i < 4; i++)
 	{
