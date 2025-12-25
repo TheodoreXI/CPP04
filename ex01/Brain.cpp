@@ -14,7 +14,10 @@ Brain &Brain::operator=(const Brain &obj)
 	if (this != &obj)
 	{
 		for (int i = 0; i< 100; i++)
+		{
+			// delete (this->idea[i]);
 			this->ideas[i] = obj.ideas[i];
+		}
 	}
 	return (*this);
 }

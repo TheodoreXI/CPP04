@@ -20,8 +20,12 @@ Dog::Dog(const Dog &obj)
 
 Dog &Dog::operator=(const Dog &obj)
 {
-	this->type = obj.type;
-	this->b_dog = new Brain(*obj.b_dog);
+	if (this != &obj)
+	{
+		this->type = obj.type;
+		delete (this->b_dog);
+		this->b_dog = new Brain(*obj.b_dog);
+	}
 	return (*this);
 }
 

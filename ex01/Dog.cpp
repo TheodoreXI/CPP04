@@ -23,6 +23,7 @@ Dog &Dog::operator=(const Dog &obj)
 	if (this != &obj)
 	{
 		this->type = obj.type;
+		delete (this->b_dog);
 		this->b_dog = new Brain(*obj.b_dog);
 	}
 	return (*this);
