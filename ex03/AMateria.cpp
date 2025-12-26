@@ -14,7 +14,6 @@ std::string const &AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "oh not\n";
 	std::cout << "AMateria " << target.getName() <<"default sound\n";
 }
 
@@ -27,4 +26,15 @@ AMateria::AMateria(void)
 AMateria::~AMateria(void)
 {
 	std::cout << "AMateria Desctructor called.\n";
+}
+
+AMateria::AMateria(const AMateria &obj)
+{
+	*this = obj;
+}
+
+AMateria &AMateria::operator=(const AMateria &obj)
+{
+	this->type = obj.type;
+	return (*this);
 }
